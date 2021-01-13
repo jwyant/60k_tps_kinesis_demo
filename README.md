@@ -60,7 +60,7 @@ ColumnList:ss_addr_sk,ss_cdemo_sk,ss_coupon_amt,ss_customer,ss_customer_address,
 
 COPY tpcds.streaming_store_sales (ss_addr_sk,ss_cdemo_sk,ss_coupon_amt,ss_customer,ss_customer_address,ss_customer_demographics,ss_customer_sk,ss_date_dim,ss_ext_discount_amt,ss_ext_list_price,ss_ext_sales_price,ss_ext_tax,ss_ext_wholesale_cost,ss_hdemo_sk,ss_household_demographics,ss_item,ss_item_sk,ss_list_price,ss_net_paid,ss_net_paid_inc_tax,ss_net_profit,ss_promo_sk,ss_promotion,ss_quantity,ss_sales_price,ss_sold_time_sk,ss_store,ss_store_sk,ss_ticket_number,ss_time_dim,ss_wholesale_cost) 
 FROM 's3://jwyant-nestedblog/tpcds/streaming/store_sales_inter/2019/10/02/18/'
-CREDENTIALS 'aws_iam_role=arn:aws:iam::123456789012:role/mySole' json 's3://jwyant-nestedblog/tpcds/store_sales_jsonpath.json';
+CREDENTIALS 'aws_iam_role=arn:aws:iam::123456789012:role/myRole' json 's3://jwyant-nestedblog/tpcds/store_sales_jsonpath.json';
 ```
 
 If you want to use Amazon Athena to demo querying directly on the data you've landed in S3, use the ddl.sql file to generate a schema-on-read for the datasets in your delivery bucket/prefix you created earlier.  Make sure you change the bucket/prefix to your location.
